@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Item : InteractableArea
 {
+    public Inventory gameInventory;
+    public ItemUI itemUI;
+
+
     public override void OnClick()
     {
         base.OnClick();
@@ -19,6 +23,9 @@ public class Item : InteractableArea
 
     private void ItemClicked()
     {
-
+        if(gameInventory != null)
+        {
+            gameInventory.AddItem(itemUI);
+        }
     }
 }
